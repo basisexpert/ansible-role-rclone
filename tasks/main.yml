@@ -27,7 +27,7 @@
 
 - name: Re-read facts after adding custom fact
   ansible.builtin.setup:
-    fact_path: "{{ rclone_fact_path }}"
+    fact_path: "{{ rclone_fact_path | dirname }}"
     filter: ansible_local
 
 - name: Handle stable version number
